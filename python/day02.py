@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
-from advent_tools import get_input_string
 from itertools import combinations
 from functools import reduce
 from operator import mul
+from advent_tools import get_input_lines, print_answer
 
-
-input_string = get_input_string()
 
 total_area, ribbon_length = (0, 0)
-for line in input_string.split('\n'):
+for line in get_input_lines():
     dimensions = list(map(int, line.strip().split('x')))
     rectangle_sides = list(combinations(dimensions, 2))
     rectangle_areas = [x*y for x, y in rectangle_sides]
@@ -21,5 +19,5 @@ for line in input_string.split('\n'):
     ribbon_length += min(perimeters)
     ribbon_length += reduce(mul, dimensions)
 
-print(total_area)
-print(ribbon_length)
+print_answer(1, total_area)
+print_answer(2, ribbon_length)

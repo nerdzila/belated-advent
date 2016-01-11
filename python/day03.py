@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from advent_tools import get_input_string
+from advent_tools import get_input_string, print_answer
 
 shifts = {
     '^': (0, 1),
@@ -22,7 +22,7 @@ for direction in instructions:
     position = move(position, direction)
     visited.add(position)
 
-print('Houses visited during 1st year: {}'.format(len(visited)))
+print_answer(1, len(visited))
 
 santa = (0, 0)
 robo_santa = (0, 0)
@@ -37,4 +37,4 @@ for idx, direction in enumerate(instructions):
         robo_santa = move(robo_santa, direction)
         visited.add(robo_santa)
 
-print('Houses visited during 2nd year: {}'.format(len(visited)))
+print_answer(2, len(visited))

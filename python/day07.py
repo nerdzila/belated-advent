@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import inspect
 from ctypes import c_uint16
-from advent_tools import get_input_string, print_answer
+from advent_tools import get_input_lines, print_answer
 
 
 class Input:
@@ -46,7 +46,7 @@ def parse_input_spec(tokens):
 
 
 inputs = {}
-for line in get_input_string().split('\n'):
+for line in get_input_lines():
     tokens = line.split()
     parsed = parse_input_spec(tokens[:-2])
     inputs[tokens[-1]] = parsed

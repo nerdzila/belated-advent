@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import re
-from advent_tools import get_input_string, print_answer
+from advent_tools import get_input_lines, print_answer
 
 decode_pattern = re.compile(r'(\\\\)|(\\\")|(\\x[0-9a-f]{2})')
 encoding_subs = [
@@ -12,7 +12,7 @@ total_code_chars = 0
 total_memory_size = 0
 total_encoded_size = 0
 
-for line in get_input_string().split('\n'):
+for line in get_input_lines():
     meaty_part = line[1:-1]
     mem_length = len(decode_pattern.sub('?', meaty_part))
     total_code_chars += len(line)

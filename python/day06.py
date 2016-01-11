@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import array
-from advent_tools import get_input_string, print_answer
+from advent_tools import get_input_lines, print_answer
 
 
 class BinaryGrid:
@@ -48,7 +48,7 @@ g1 = BinaryGrid(1000, 1000, 0)
 g2 = BinaryGrid(1000, 1000, 0)
 
 
-for line in get_input_string().split('\n'):
+for line in get_input_lines():
     print(line)
     first = Instruction(line)
     second = UpdatedInstruction(line)

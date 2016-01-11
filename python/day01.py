@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from advent_tools import get_input_string, print_answer
 
 
 def direction(instruction):
@@ -10,21 +11,21 @@ def direction(instruction):
 
     raise ValueError('Instruction has to be either "(" or ")"')
 
-with open('day01.in') as input_file:
-    input_string = input_file.read()
 
-    first_answer = input_string.count('(') - input_string.count(')')
+input_string = get_input_string()
 
-    print('First answer: {}'.format(first_answer))
+first_answer = input_string.count('(') - input_string.count(')')
 
-    current_floor = 0
+print_answer(1, first_answer)
 
-    for idx, instruction in enumerate(input_string):
-        current_floor += direction(instruction)
+current_floor = 0
 
-        if current_floor < 0:
-            print('Second answer: {}'.format(idx + 1))
-            break
+for idx, instruction in enumerate(input_string):
+    current_floor += direction(instruction)
 
-    if current_floor >= 0:
-        print('Second answer: Negative floor was never reached')
+    if current_floor < 0:
+        print_answer(2, idx + 1)
+        break
+
+if current_floor >= 0:
+    print('Second answer: Negative floor was never reached')

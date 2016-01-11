@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import hashlib
+from advent_tools import print_answer
 
 ENCODING = 'utf-8'
 
@@ -23,5 +24,5 @@ def find_hash_seed(prefix, key):
 puzzle_input = input('Puzzle key: ')
 
 
-print(find_hash_seed('00000', puzzle_input))
-print(find_hash_seed('000000', puzzle_input))
+print_answer(1, find_hash_seed('00000', puzzle_input))
+print_answer(2, find_hash_seed('000000', puzzle_input))
