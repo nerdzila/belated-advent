@@ -22,7 +22,7 @@ def get_input_string():
 def get_input_lines():
     with open(get_input_file_path(), 'r') as input_file:
         for line in input_file:
-            yield line
+            yield line.strip()
 
 
 def print_answer(which_answer, answer):
